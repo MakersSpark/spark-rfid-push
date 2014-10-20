@@ -6,7 +6,7 @@ When Spark Printer scans a compatible MIFARE Classic RFID card (inexpensive and 
 
 See [this readme](https://github.com/MakersSpark/Maker-Spark-Server/blob/master/README.md) for more information.
 
-## Configuration
+## Configuration  
 
 You'll need to edit `index.js` – specifically, change the variable `url` to the URL you want to listen to Spark.publish events from, and the argument that `unirest.post` accepts to the URL you wish to push the POST request to.
 
