@@ -1,16 +1,21 @@
-# node-js-getting-started
+# Spark Printer Push Server
 
-A barebones Node.js app using [Express 4](http://expressjs.com/).
+A barebones node.js app that listens for Spark Printer RFID scans and pushes them to Spark Printer Server.
 
-This application support the [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
+When Spark Printer scans a compatible MIFARE Classic RFID card (inexpensive and widely-available), it sends a notice through `Spark.publish` the Spark Cloud. This server listens out for those calls and forwards them on as a POST request to a server of your choice.
+
+See [this readme](https://github.com/MakersSpark/Maker-Spark-Server/blob/master/README.md) for more information.
+
+## Configuration
+
+You'll need to edit `index.js` – specifically, change `var url` to the URL you want to listen to Spark.publish events from, and the argument that `unirest.post` accepts to the URL you wish to push the POST request to.
 
 ## Running Locally
 
-Make sure you have [Node.js](http://nodejs.org/) and the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
+Make sure you have [Node.js](http://nodejs.org/) installed.
 
 ```sh
-$ git clone git@github.com:heroku/node-js-getting-started.git # or clone your own fork
-$ cd node-js-getting-started
+$ cd spark-rfid-push
 $ npm install
 $ npm start
 ```
@@ -24,13 +29,3 @@ $ heroku create
 $ git push heroku master
 $ heroku open
 ```
-
-## Documentation
-
-For more information about using Node.js on Heroku, see these Dev Center articles:
-
-- [Getting Started with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
-- [Heroku Node.js Support](https://devcenter.heroku.com/articles/nodejs-support)
-- [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
-- [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
-- [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)
