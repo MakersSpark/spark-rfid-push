@@ -8,7 +8,7 @@ See [this readme](https://github.com/MakersSpark/Maker-Spark-Server/blob/master/
 
 ## Configuration  
 
-You'll need to edit `index.js` – specifically, change the variable `url` to the URL you want to listen to Spark.publish events from, and the argument that `unirest.post` accepts to the URL you wish to push the POST request to.
+You'll need to edit `server.js` – specifically, change the `url` variable to the URL you want to listen to Spark.publish events from, and the argument that `unirest.post` takes to the URL you wish to push the POST request to.
 
 ## Running Locally
 
